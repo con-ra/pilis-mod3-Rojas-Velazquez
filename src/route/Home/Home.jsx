@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
+import { get } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Favorites from "../../component/Favorite/Favorites";
 import Weathers from "../../component/Weather/Weathers";
 import { UserContext } from "../../context/UserContext";
 import { WeathersContext } from "../../context/WeathersContext";
 import "./Home.css";
-
 const Home = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const { weathers, setWeathers } = useContext(WeathersContext);

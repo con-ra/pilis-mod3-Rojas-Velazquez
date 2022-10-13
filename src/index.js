@@ -6,15 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import { WeathersProvider } from "./context/WeathersContext";
 import { UserProvider } from "./context/UserContext";
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HashRouter>
       <UserProvider>
+        <FavoritesProvider>
           <WeathersProvider>
             <App />
           </WeathersProvider>
+        </FavoritesProvider>
       </UserProvider>
     </HashRouter>
   </React.StrictMode>
