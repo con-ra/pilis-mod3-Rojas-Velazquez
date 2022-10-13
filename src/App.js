@@ -12,9 +12,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Navigation />}>
-    
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
           <Route path="weather/create" element={<WeatherCreation />} />
-         
+          <Route path="weather/:id" element={<WeatherDisplay />} />
         </Route>
       </Routes>
     </div>
