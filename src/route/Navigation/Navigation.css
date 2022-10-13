@@ -1,0 +1,118 @@
+.navigation {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border-radius: 10px;
+  /* padding: 0 25px 0 25px; */
+  margin-bottom: 1px;
+}
+.logo-container {
+  height: 100px;
+  width: 100px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+.nav-links-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: -14%;
+}
+.search-c{
+  box-sizing: border-box;
+  color: #191919;
+  padding: 15px 15px 15px 35px;
+  width: 100%;
+  text-align: center;
+  height: 35px;
+  width: 47%;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.nav-links-st{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+
+}
+.nav-link {
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 300;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+  overflow: hidden;
+  backdrop-filter: blur(15px) ;
+}
+.nav-link:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  
+}
+.nav-link:before {
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255,0.1);
+}
+
+
+.nav-link:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+#styles {
+  position: absolute;
+  top: 0;
+  width: 41px;
+  height: 41px;
+  z-index: 1;
+  transition: 0.5x;
+}
+
+#styles::before{
+  content:'';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: #5da6ff;
+  box-shadow: 0 0 15px #5da6ff,
+  0 0 30px #5da6ff,
+  0 0 45px #5da6ff,
+  0 0 60px #5da6ff
+
+}
