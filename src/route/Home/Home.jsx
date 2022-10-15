@@ -26,13 +26,9 @@ const Home = () => {
     if (weathers.length === 0 && dataStored) {
       dataParsed = JSON.parse(dataStored);
 
-      console.log(" weathers ", weathers);
       setWeathers([...weathers, ...dataParsed.weathers]);
-      console.log("dt", dataParsed);
     }
-    console.log(" weathers ", weathers.length);
   }, []);
-  console.log("weathers => ", weathers);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
