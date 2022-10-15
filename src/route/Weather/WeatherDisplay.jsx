@@ -40,7 +40,7 @@ const WeatherDisplay = () => {
     <div className="weather-display-container">
       <div className="weather-display-card">
         <h4 className="weather-display-titule">Infomation Weather</h4>
-        <h6 className="weather-display-zone">{weather.name}</h6>
+        <h6 className="weather-display-zone">{weather?.name}</h6>
         <img className="weather-display-img" src={icon} alt="icon" />
         <div className="weather-temp-windspeed">
           <div className="details">
