@@ -6,4 +6,5 @@ Se aplico en el proyecto :
 Login para crear una card,
 localStorage,
 Imagenes,
-Glassmorphismo
+Glassmorphismo,
+Buscador por ciudades.
