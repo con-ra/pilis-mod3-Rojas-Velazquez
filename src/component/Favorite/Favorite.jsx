@@ -1,10 +1,10 @@
 import './Favorite.css'
 
 const Favorite = ( { favorite } ) => {
-  const { timezone} = favorite
+  const { name} = favorite
   return (
     <div className="fav-item">
-      <span className="item-name">{timezone}</span>
+      <span className="item-name">{name}</span>
     </div>
   )
 }

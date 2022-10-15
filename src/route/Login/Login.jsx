@@ -22,7 +22,6 @@ const Login = () => {
 
     if (dataStored) {
       dataParsed = JSON.parse(dataStored);
-      // setCurrentUser(dataParsed.user);
     }
 
     if (!dataStored) {
@@ -71,7 +70,7 @@ const Login = () => {
           type="text"
           placeholder="por ej. sebatech@gmail.com"
           {...register('username', {
-            required: 'Debe ingresar su nombre de usuario',
+            required: 'You must enter your username',
           })}
         />
         <p>{errors.username?.message}</p>
@@ -79,14 +78,14 @@ const Login = () => {
         <input
           className="input-form"
           type="password"
-          placeholder="Minimo 6 caracteres"
+          placeholder="min 6 characters"
           {...register('password', {
             required: 'Debe ingresar su contraseña',
           })}
         />
         <p>{errors.password?.message}</p>
         <button className="btn-form" type="submit">
-          Iniciar Sesión
+          Log In
         </button>
       </form>
     </div>

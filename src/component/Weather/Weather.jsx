@@ -19,7 +19,6 @@ const Weather = ({ weather }) => {
     if (!weather) {
       const dataStored = localStorage.getItem('data');
       const dataParsed = JSON.parse(dataStored);
-      console.log('dataParsed => ', dataParsed);
       const [weather] = dataParsed.weathers.filter(
         (weather) => weather.id === id
         );
@@ -35,15 +34,9 @@ const Weather = ({ weather }) => {
     if (!weather.time) {
       getWeather(weather)
         .then((data) => {
-          console.log('sin contexto solo ls => ', data);
-          
           const dd = data.current_weather.time;
           const date = new Date(dd);
-          console.log("date => ", date.toLocaleString("es-AR"))
           setWeatherInformation({current_weather : {time : date.toLocaleString("es-AR")}} );
-
-          
-
         })
         .catch((error) => console.log(error));
     }

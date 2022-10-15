@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import "./Navigation.css";
 import logo from "../../assets/logo.png";
 const Navigation = () => {
+  let dataStoredParsed;
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const csst = document.querySelector("#styles");
@@ -30,7 +31,25 @@ const Navigation = () => {
   console.log("current", currentUser);
   const handleSignOut = () => {
     setCurrentUser(null);
-  };
+
+    if (dataStoredParsed) {
+      // console.log("se recargo la pagina con ls");
+      localStorage.setItem(
+        "data",
+        JSON.stringify({ user: {}, weathers: [dataStoredParsed.weathers] })
+      );
+      return;
+    }
+
+    // console.log("tiene contexto")
+    const data = localStorage.getItem("data");
+    dataStoredParsed = JSON.parse(data);
+
+    localStorage.setItem(
+      "data",
+      JSON.stringify({ user: {}, weathers: dataStoredParsed.weathers })
+    );
+  };
 
   return (
     <>
@@ -50,7 +69,7 @@ const Navigation = () => {
             ) : (
               <Link className="nav-link">New weather</Link>
             )}
-            {currentUser ? (
+            {currentUser ?  (
               <Link className="nav-link" onClick={handleSignOut}>
                 Log out
               </Link>

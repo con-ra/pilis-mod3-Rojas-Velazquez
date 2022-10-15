@@ -33,13 +33,14 @@ header {
   bottom: -30px;
 }
 .input-search {
+  margin-right: 59px;
   box-sizing: border-box;
   color: #191919;
   padding: 15px 15px 15px 35px;
   width: 100%;
   text-align: center;
   height: 35px;
-  width: 47%;
+  width: 44%;
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 10px;
@@ -52,14 +53,7 @@ header {
   outline: none;
   border: none;
 }
-.input-icon {
-  color: #191919;
-  width: 20px;
-  height: 20px;
-  margin-left: -120px;
-  margin-right: 100px;
-  transform: translateY(-1%);
-}
+
 ::placeholder {
   color: #e5e5e5;
 }
@@ -71,7 +65,7 @@ header {
   background-color: rgba(255, 255, 255, 0.06);
   margin-left: 264px;
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
   border-radius: 8px;

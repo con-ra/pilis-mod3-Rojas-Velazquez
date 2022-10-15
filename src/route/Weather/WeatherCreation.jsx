@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { getWeather } from "../../service";
-import { useNavigate } from "react-router-dom";
-import "./WeatherCreation.css";
-import { WeathersContext } from "../../context/WeathersContext";
+import { useContext, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { getWeather } from '../../service';
+import { useNavigate } from 'react-router-dom';
+import './WeatherCreation.css';
+import { WeathersContext } from '../../context/WeathersContext';
 
 const WeatherCreation = () => {
   const { weathers, setWeathers } = useContext(WeathersContext);
@@ -14,7 +14,7 @@ const WeatherCreation = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dataStored = localStorage.getItem("data");
+    dataStored = localStorage.getItem('data');
     if (dataStored) {
       setDataParsed(JSON.parse(dataStored));
     }
@@ -25,15 +25,13 @@ const WeatherCreation = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-    },
+    defaultValues: {},
   });
 
   const onSubmit = (data) => {
     console.log(data);
     getWeather(data)
       .then((res) => {
-        console.log("res=>", res);
         const { temperature, weathercode, windspeed, time } =
           res.current_weather;
         const date = new Date(time);
@@ -45,7 +43,7 @@ const WeatherCreation = () => {
           temperature,
           weathercode,
           windspeed,
-          time: date.toLocaleString("es-AR"),
+          time: date.toLocaleString('es-AR'),
         };
 
         const WeatherSimpleInfo = {
@@ -58,14 +56,14 @@ const WeatherCreation = () => {
         setWeathers([...weathers, WeatherNew]);
 
         localStorage.setItem(
-          "data",
+          'data',
           JSON.stringify({
             user: dataParsed.user,
             weathers: [...dataParsed.weathers, WeatherSimpleInfo],
           })
         );
 
-        navigate("/");
+        navigate('/');
       })
       .catch((err) => console.log(err));
   };
@@ -78,7 +76,7 @@ const WeatherCreation = () => {
       </div>
       <form className="weather-form" onSubmit={handleSubmit(onSubmit)}>
         <h3 className="form-welcome">
-          Add new weather!
+          Add new card!
           <span className="form-subtitule">
             Just complete this information.
           </span>
@@ -87,9 +85,9 @@ const WeatherCreation = () => {
         <input
           className="input-weather-name-form"
           type="text"
-          placeholder="Nombre de la ciudad"
-          {...register("name", {
-            required: "You must enter a name",
+          placeholder="Name of city"
+          {...register('name', {
+            required: 'You must enter a name',
           })}
         />
         <p>{errors.timezone?.message}</p>
@@ -97,23 +95,23 @@ const WeatherCreation = () => {
         <input
           className="input-weather-name-form"
           type="text"
-          placeholder="por ej. -23423"
-          {...register("latitude", {
-            required: "You must enter a latitude",
+          placeholder="for example. -23423"
+          {...register('latitude', {
+            required: 'You must enter a latitude',
           })}
         />
         <label>Enter Longitude</label>
         <input
           className="input-weather-name-form"
           type="text"
-          placeholder="por ej 234234"
-          {...register("longitude", {
-            required: "You must enter a longitude",
+          placeholder="for example 234234"
+          {...register('longitude', {
+            required: 'You must enter a longitude',
           })}
         />
         <p>{errors.tag?.message}</p>
         <button className="btn-form" type="submit">
-          Crear Weather
+           Create weather card
         </button>
       </form>
     </div>

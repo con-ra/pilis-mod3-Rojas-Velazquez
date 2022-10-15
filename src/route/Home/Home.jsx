@@ -6,6 +6,7 @@ import Weathers from "../../component/Weather/Weathers";
 import { UserContext } from "../../context/UserContext";
 import { WeathersContext } from "../../context/WeathersContext";
 import "./Home.css";
+
 const Home = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const { weathers, setWeathers } = useContext(WeathersContext);
