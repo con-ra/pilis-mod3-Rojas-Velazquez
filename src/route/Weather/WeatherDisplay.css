@@ -1,0 +1,116 @@
+.weather-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+.weather-display-card {
+  height: 260px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  color: #fcfcfc;
+}
+.weather-display-titule {
+  letter-spacing: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  margin: 25px 0 10px 0;
+}
+.weather-display-img {
+  width: 22%;
+  justify-content: center;
+}
+.weather-display-zone {
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.weather-temp-windspeed {
+  width: 70%;
+  margin-left: 15%;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 30px;
+}
+.details {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.weather-wind-temp {
+  color: #b3b3b3;
+}
+.details span {
+  color: bisque;
+}
+.details:first-child {
+  border-right: 2px solid #fcfcfc;
+}
+
+.btn-back {
+  box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  margin-top: 30px;
+  width: 200px;
+  text-decoration: none;
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  transition: 0.5s;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  letter-spacing: 5px;
+}
+.btn-back:after {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 58%,
+    rgba(255, 255, 255, 0.16) 67%,
+    transparent 68%
+  );
+  background-size: 200% 100%;
+  background-position: 165% 0;
+  transition: 0.7s;
+}
+.btn-back:hover:after {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background-position: -20% 0;
+}
+
+.btn-back:hover {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 15px 30px 32px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+}
